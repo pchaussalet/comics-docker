@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h1>Comics browser</h1>
+    <h3><em>Yet another comics browser :)</em></h3>
+    <div>
+        <p>You can choose to browse the database either by characters, teams or publishers.</p>
+        <h6>Data provided by <a href="http://www.comicvine.com/">Comic Vine</a>.</h6>
+    </div>
+</div>
+<div>
+    <button class="btn btn-lg btn-block btn-primary homeButton characterButton" ng-click="openSection('/characters')">
+        <i class="fa fa-user fa-5x"></i>
+        <span>Browse by character</span>
+    </button>
+    <button class="btn btn-lg btn-block btn-primary homeButton teamButton" ng-click="openSection('/teams')">
+        <i class="fa fa-group fa-5x"></i>
+        <span>Browse by team</span>
+    </button>
+    <button class="btn btn-lg btn-block btn-primary homeButton publisherButton" ng-click="openSection('/publishers')">
+        <i class="fa fa-book fa-5x"></i>
+        <span>Browse by publisher</span>
+    </button>
+</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="comicsApp">
+<head lang="en">
+    <title>Comics browser</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/listItem.css"/>
+    <link rel="stylesheet" href="css/sections.css"/>
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="navigationController">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Marvel browser</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: isCurrentLocation('/', true)}"><a ng-click="openSection('/')">Home</a></li>
+                    <li ng-class="{active: isCurrentLocation('/character')}"><a class="characterHeader" ng-click="openSection('/characters')">Characters</a></li>
+                    <li ng-class="{active: isCurrentLocation('/team')}"><a class="teamHeader" ng-click="openSection('/teams')">Teams</a></li>
+                    <li ng-class="{active: isCurrentLocation('/publisher')}"><a class="publisherHeader" ng-click="openSection('/publishers')">Publishers</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="container" ng-view></section>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/async/lib/async.js"></script>
+
+    <!-- build:js js/app.js <path> -->
+    <script src="js/main.js"></script>
+    <script src="js/params.js"></script>
+
+    <script src="js/directives/publisherListItem.js"></script>
+    <script src="js/directives/characterListItem.js"></script>
+    <script src="js/directives/teamListItem.js"></script>
+
+    <script src="js/filters/page.js"></script>
+
+    <script src="js/controllers/navigation.js"></script>
+    <script src="js/controllers/home.js"></script>
+    <script src="js/controllers/publishers/details.js"></script>
+    <script src="js/controllers/publishers/list.js"></script>
+    <script src="js/controllers/characters/details.js"></script>
+    <script src="js/controllers/characters/list.js"></script>
+    <script src="js/controllers/teams/details.js"></script>
+    <script src="js/controllers/teams/list.js"></script>
+
+    <script src="js/resources/resource.js"></script>
+    <script src="js/resources/characters.js"></script>
+    <script src="js/resources/teams.js"></script>
+    <script src="js/resources/publishers.js"></script>
+
+    <script src="js/services/utils.js"></script>
+    <script src="js/services/resources.js"></script>
+    <script src="js/services/characters.js"></script>
+    <script src="js/services/teams.js"></script>
+    <script src="js/services/publishers.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

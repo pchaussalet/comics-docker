@@ -1,0 +1,30 @@
+<section class="publisherDetails">
+    <div class="jumbotron">
+        <h1 class="clearfix">
+            <img ng-src="{{image.thumb_url}}" ng-show="image.thumb_url" class="pull-right">
+            <span ng-bind="name"></span>
+        </h1>
+        <h5><em ng-bind="aliases"></em></h5>
+        <p ng-bind="deck" class="description"></p>
+    </div>
+    <div class="col-md-6">
+        <div ng-show="characters.length > 0">
+            <h3>
+                <a ng-class="{invisible: isFirstCharactersPage()}" ng-click="showCharactersPage(charactersPage-1)">&lt;</a>
+                Characters
+                <a ng-class="{invisible: isLastCharactersPage()}" ng-click="showCharactersPage(charactersPage+1)">&gt;</a>
+            </h3>
+            <character-list-item ng-repeat="character in characters | page:charactersPage" character="character" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></character-list-item>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ng-show="teams.length > 0">
+            <h3>
+                <a ng-class="{invisible: isFirstTeamsPage()}" ng-click="showTeamsPage(teamsPage-1)">&lt;</a>
+                Teams
+                <a ng-class="{invisible: isLastTeamsPage()}" ng-click="showTeamsPage(teamsPage+1)">&gt;</a>
+            </h3>
+            <team-list-item ng-repeat="team in teams | page:teamsPage" team="team" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></team-list-item>
+        </div>
+    </div>
+</section>

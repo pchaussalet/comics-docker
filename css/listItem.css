@@ -1,0 +1,26 @@
+.list-item {
+  height: 9em;
+  min-width: 9em;
+  background-color: #eeeeee;
+  border: solid 1px silver;
+  border-radius: 5px;
+  padding: 0.25em;
+}
+.list-item img {
+  display: block;
+  text-align: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 3em;
+}
+.list-item span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  height: 3em;
+  line-height: 1em;
+}
+.list-item.see-more {
+  background-color: #dddddd;
+}

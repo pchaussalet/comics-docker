@@ -1,0 +1,43 @@
+@import "variables";
+.section(@color) {
+  .jumbotron {
+    border-bottom: solid 0.5em @color;
+  }
+}
+
+
+.characterDetails, .characterList {
+  .section(@character-color)
+}
+.characterButton {
+  background-color: @character-color;
+}
+ li.active {
+  .characterHeader {
+    background-color: @character-color !important;
+  }
+}
+
+.teamDetails, .teamList {
+  .section(@team-color)
+}
+.teamButton {
+  background-color: @team-color;
+}
+li.active {
+  .teamHeader {
+    background-color: @team-color !important;
+  }
+}
+
+.publisherDetails, .publisherList {
+  .section(@publisher-color)
+}
+.publisherButton {
+  background-color: @publisher-color;
+}
+li.active {
+  .publisherHeader {
+    background-color: @publisher-color !important;
+  }
+}
