@@ -1,0 +1,22 @@
+<section class="characterList">
+    <div class="jumbotron">
+        <h1>Search a character</h1>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+        <form ng-submit="search()">
+            <div class="input-group">
+                <input ng-model="keywords" type="text" class="form-control" placeholder="Character name">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+    </div>
+    <div class="row">
+        <character-list-item ng-repeat="character in characters" character="character" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></character-list-item>
+    </div>
+</section>

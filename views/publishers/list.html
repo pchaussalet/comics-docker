@@ -1,0 +1,22 @@
+<section class="publisherList">
+    <div class="jumbotron">
+        <h1>Search a publisher</h1>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+        <form ng-submit="search()">
+            <div class="input-group">
+                <input ng-model="keywords" type="text" class="form-control" placeholder="Publisher name">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+    </div>
+    <div class="row">
+        <publisher-list-item ng-repeat="publisher in publishers" publisher="publisher" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></publisher-list-item>
+    </div>
+</section>

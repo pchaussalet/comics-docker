@@ -1,0 +1,57 @@
+<section class="characterDetails">
+    <div class="jumbotron">
+        <div class="clearfix">
+            <img ng-src="{{image.thumb_url}}" ng-show="image.thumb_url" class="pull-right">
+            <h1 ng-bind="name"></h1>
+            <h4><em ng-bind="realName"></em></h4>
+            <h5><em ng-bind="aliases"></em></h5>
+            <dl class="dl-horizontal clearfix pull-left">
+                <dt ng-show="gender">Gender</dt>
+                <dd ng-show="gender">
+                    <i class="fa fa-male" ng-show="gender == 1"></i>
+                    <i class="fa fa-female" ng-show="gender == 2"></i>
+                    <i class="fa fa-question" ng-show="gender == 3"></i>
+                </dd>
+                <dt ng-show="birth">Birth</dt>
+                <dd ng-show="birth" ng-bind="birth"></dd>
+                <dt ng-show="origin">Origin</dt>
+                <dd ng-show="origin" ng-bind="origin"></dd>
+            </dl>
+        </div>
+        <p ng-bind="deck" class="description"></p>
+    </div>
+    <div ng-show="powers.length > 0">
+        <h3>Powers</h3>
+        <ul class="list-inline">
+            <li ng-repeat="power in powers" ng-bind="power.name"></li>
+        </ul>
+    </div>
+    <div ng-show="teams.length > 0">
+        <h3>Teams</h3>
+        <ul class="list-inline">
+            <li ng-repeat="team in teams">
+                <a ng-click="openTeam(team.id)" ng-bind="team.name"></a>
+            </li>
+        </ul>
+    </div>
+    <div ng-show="friends.length > 0" class="col-md-6">
+        <div>
+            <h3>
+                <a ng-class="{invisible: isFirstFriendsPage()}" ng-click="showFriendsPage(friendsPage-1)">&lt;</a>
+                Friends
+                <a ng-class="{invisible: isLastFriendsPage()}" ng-click="showFriendsPage(friendsPage+1)">&gt;</a>
+            </h3>
+        </div>
+        <character-list-item ng-repeat="friend in friends | page:friendsPage" character="friend" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></character-list-item>
+    </div>
+    <div ng-show="enemies.length > 0" class="col-md-6">
+        <div>
+            <h3>
+                <a ng-class="{invisible: isFirstEnemiesPage()}" ng-click="showEnemiesPage(enemiesPage-1)">&lt;</a>
+                Enemies
+                <a ng-class="{invisible: isLastEnemiesPage()}" ng-click="showEnemiesPage(enemiesPage+1)">&gt;</a>
+            </h3>
+        </div>
+        <character-list-item ng-repeat="enemy in enemies | page:enemiesPage" character="enemy" class="col-lg-2 col-md-3 col-sm-12 col-xs-12 list-item"></character-list-item>
+    </div>
+</section>

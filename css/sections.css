@@ -1,0 +1,30 @@
+.characterDetails .jumbotron,
+.characterList .jumbotron {
+  border-bottom: solid 0.5em #5bc0de;
+}
+.characterButton {
+  background-color: #5bc0de;
+}
+li.active .characterHeader {
+  background-color: #5bc0de !important;
+}
+.teamDetails .jumbotron,
+.teamList .jumbotron {
+  border-bottom: solid 0.5em #f0ad4e;
+}
+.teamButton {
+  background-color: #f0ad4e;
+}
+li.active .teamHeader {
+  background-color: #f0ad4e !important;
+}
+.publisherDetails .jumbotron,
+.publisherList .jumbotron {
+  border-bottom: solid 0.5em #d9534f;
+}
+.publisherButton {
+  background-color: #d9534f;
+}
+li.active .publisherHeader {
+  background-color: #d9534f !important;
+}
